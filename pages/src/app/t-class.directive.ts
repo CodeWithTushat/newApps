@@ -1,3 +1,5 @@
+/* Example of Attribute directive */
+
 import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({

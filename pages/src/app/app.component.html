@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <ul class="pagination">
     <li class="page-item" appTClass [ngClass]="{ disabled: currentPage === 0}">
       <a class="page-link" (click)="currentPage = currentPage - 1">Prev</a>
@@ -15,16 +15,16 @@
       <a class="page-link" (click)="currentPage = currentPage + 1">Next</a>
     </li>
   </ul>
-</nav>
+</nav> -->
 
 <!-- <div> Code ID: CODE001
   <h4 appTClass [bgColor]="'red'">{{ images[currentPage].titles }}</h4>
   <img [src]="images[currentPage].url" />
 </div> -->
-<div>
+<!-- <div>
   <h4 [appTClass]="'red'">{{ images[currentPage].titles }}</h4>
   <img [src]="images[currentPage].url" />
-</div>
+</div> -->
 
 
 <!-- <div [ngSwitch]="currentPage">
@@ -35,3 +35,34 @@
     Unknow current page!
   </div>
 </div> -->
+
+
+<!-- Example of structural directive -->
+<ul *appRepeat="10">
+  <li>Example of structural Directive</li>
+</ul>
+
+<!-- Replace *ngFor directive to *appRepeat directive -->
+<nav>
+  <ul class="pagination">
+    <li class="page-item" appTClass [ngClass]="{ disabled: currentPage === 0}">
+      <a class="page-link" (click)="currentPage = currentPage - 1">Prev</a>
+    </li>
+    <ng-container *appRepeat="images.length; let i=index">
+      <li 
+      [ngClass]="{ active : i === currentPage}"
+      class="page-item"  *ngIf="checkWindowIndex(i)">
+        <a (click)="currentPage = i" class="page-link">{{ i + 1}}</a>
+      </li>
+    </ng-container>
+    
+    <li class="page-item" [ngClass]="{ disabled: currentPage === images.length -1}">
+      <a class="page-link" (click)="currentPage = currentPage + 1">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h4 [appTClass]="'red'">{{ images[currentPage].titles }}</h4>
+  <img [src]="images[currentPage].url" />
+</div>

@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TClassDirective } from './t-class.directive';
+import { RepeatDirective } from './repeat.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TClassDirective
+    TClassDirective,
+    RepeatDirective
   ],
   imports: [
     BrowserModule
