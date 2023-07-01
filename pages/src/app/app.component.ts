@@ -22,6 +22,22 @@ export class AppComponent {
     {
       titles:'Land Rover',
       url: 'https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/127323/discovery-sport-right-front-three-quarter.jpeg?isig=0&q=75'
+    },
+    {
+      titles: 'Goku',
+      url:'https://animemotivation.com/wp-content/uploads/2018/03/Dragon-Ball-Z-Wallpapers-Goku.jpg'
+    },
+    {
+      titles:'Goku 1',
+      url : 'https://wallpaperaccess.com/full/54720.jpg'
+    },
+    {
+      titles: 'Goku SSJ3',
+      url : 'https://wallpaperaccess.com/full/237439.jpg'
     }
-  ]
+  ];
+
+  checkWindowIndex(index:number){
+    return Math.abs(this.currentPage - index) < 2;
+  }
 }
