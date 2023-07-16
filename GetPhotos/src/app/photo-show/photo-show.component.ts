@@ -8,11 +8,21 @@ import { PhotosService } from '../photos.service';
 })
 export class PhotoShowComponent implements OnInit{
 
+  photoUrl: string = '';
+
    constructor (
     private photos: PhotosService
    ) {}
 
    ngOnInit(): void {
-       
+    this.photos.getPhotosApi().subscribe(response => {
+      this.photoUrl = response.urls.regular;
+     })
+   }
+
+   getLatestPhoto(){
+    this.photos.getPhotosApi().subscribe(response => {
+      this.photoUrl = response.urls.regular;
+     })
    }
 }

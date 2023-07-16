@@ -1,1 +1,4 @@
-<p>photo-show works!</p>
+<div>
+    <button (click)="getLatestPhoto()">Get Photos</button>
+</div>
+<img *ngIf="photoUrl" [src]="photoUrl" />
