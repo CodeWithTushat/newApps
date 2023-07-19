@@ -1,27 +1,43 @@
-<form [formGroup]="cardForm" (ngSubmit)="OnSubmit()">
-    <tn-input 
-    [control]="$any(cardForm).get('name')"
-    label="Name">
-    </tn-input>
+<div class="column">
+    <app-card 
+        [name]="$any(cardForm).get('name').value"
+        [cardNumber]="$any(cardForm).get('cardNumber').value"
+        [expiration]="$any(cardForm).get('expiration').value"
+    ></app-card>
+    <div class="column">
+        <form [formGroup]="cardForm" (ngSubmit)="OnSubmit()">
+            <tn-input 
+            [control]="$any(cardForm).get('name')"
+            label="Name">
+            </tn-input>
 
-    <tn-input 
-    [control]="$any(cardForm).get('cardNumber')"
-    label="Card Number">
-    </tn-input>
+            <tn-input 
+            [control]="$any(cardForm).get('cardNumber')"
+            label="Card Number">
+            </tn-input>
 
-    <tn-input 
-    [control]="$any(cardForm).get('expiration')"
-    label="Expiration">
-    </tn-input>
+            <div class="columns">
+                <div class="column">
+                    <tn-input 
+                    [control]="$any(cardForm).get('expiration')"
+                    label="Expiration">
+                    </tn-input>
+                </div>
+                <div class="column">
+                    <tn-input 
+                    [control]="$any(cardForm).get('securityCode')"
+                    label="Security Code">
+                    </tn-input>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">Submit</button>
+                <button class="button is-warning" type="button" (click)="onResetCall()">Reset</button>
+            </div>
+        </form>
 
-    <tn-input 
-    [control]="$any(cardForm).get('securityCode')"
-    label="Security Code">
-    </tn-input>
-
-    <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">Submit</button>
-</form>
-
-<div>Form Contents: {{ cardForm.value | json }}</div>
-<div>Form is valid: {{ cardForm.valid }}</div>
-<div>Errors around name: {{ cardForm.controls.name.errors | json }}</div>
+        <!-- <div>Form Contents: {{ cardForm.value | json }}</div>
+        <div>Form is valid: {{ cardForm.valid }}</div>
+        <div>Errors around name: {{ cardForm.controls.name.errors | json }}</div> -->
+    </div>
+</div>

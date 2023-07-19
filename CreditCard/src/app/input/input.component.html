@@ -3,7 +3,10 @@
         {{label}}
     </label>
     <div class="control">
-        <input mask="(000) 000-0000" class="input" [formControl]="control" 
+        <!-- <input mask="(000) 000-0000" class="input" [formControl]="control" 
+        [ngClass]="{'is-danger': showErrors() }"
+        /> -->
+        <input class="input" [formControl]="control" 
         [ngClass]="{'is-danger': showErrors() }"
         />
     </div>
