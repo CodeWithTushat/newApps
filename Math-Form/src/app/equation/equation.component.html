@@ -1,0 +1,19 @@
+<form [formGroup]="mathForm">
+    <!-- {{ mathForm.get('a') }} + {{ mathForm.get('b') }} =  -->
+    <div class="equation">{{ a }} + {{ b }} = </div>
+    <input appAnswerHighlight formControlName="answer"/>
+</form>
+
+<div class="stats">
+    {{ secoundsPerSolution | number: '1.1-3' }}
+</div>
+
+
+<hr>
+<div>Form is valid : {{ mathForm.valid }}</div>
+<div>Form values : {{ mathForm.value | json }}</div>
+<div>Form Errors : {{ mathForm.errors | json }}</div>
+
+<!-- 
+    {{ mathForm.get('a') }} or {{ mathForm.controls.a.value }} or {{ mathForm.value.a }}
+ -->
