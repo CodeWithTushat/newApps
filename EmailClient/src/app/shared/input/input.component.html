@@ -1,1 +1,24 @@
-<p>input works!</p>
+<div class="field">
+    <label for="label">{{ label }}</label>
+    <input [type]="inputType" [formControl]="$any(control)" />
+    <div *ngIf="showErrors()" class="ui pointing red basic label">
+        <p *ngIf="control.errors != null && control.errors['required']">
+            Invalid Username
+        </p>
+        <p *ngIf="control.errors != null && control.errors['minlength']">
+            Username you entered is {{ control.errors['minlength'].actualLength }} characters long, it must be at aleast {{ control.errors['minlength'].requiredLength }} characters
+        </p>
+        <p *ngIf="control.errors != null && control.errors['maxlength']">
+            Username you entered is {{ control.errors['maxlength'].actualLength }} characters long, it must be at aleast {{ control.errors['maxlength'].requiredLength }} characters
+        </p>
+        <p *ngIf="control.errors != null && control.errors['pattern']">
+            Invalid Formate
+        </p>
+        <p *ngIf="control.errors != null &&  control.errors['nonUniqueUsername']">
+            Username is already taken
+        </p>
+        <p *ngIf="control.errors != null && control.errors['noConnection']">
+            Please check your connection
+        </p>
+    </div>
+</div>

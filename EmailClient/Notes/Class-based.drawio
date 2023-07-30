@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2023-07-30T14:20:03.051Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="t7Snz_oFckeSssreqD8_" version="21.6.6" type="device">
+  <diagram name="Page-1" id="KAhYZPPwRW-ByHqyqQoo">
+    <mxGraphModel dx="880" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-1" value="Class-Based Custom Sync Validator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="120" y="90" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="N7et6VhgEhVG0fBz1qnN-2" target="N7et6VhgEhVG0fBz1qnN-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-2" value="Create a new class to implement your custom validator" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="120" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="N7et6VhgEhVG0fBz1qnN-3" target="N7et6VhgEhVG0fBz1qnN-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-3" value="[Optional] have the class implement the &#39;Validator&#39; interface" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="190" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="N7et6VhgEhVG0fBz1qnN-4" target="N7et6VhgEhVG0fBz1qnN-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-4" value="Add a &#39;validate&#39; method to the class, which will be with a FormGroup or FormControl" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="270" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="N7et6VhgEhVG0fBz1qnN-5" value="Validator method should return &#39;null&#39; if everything is OK, or a an object if something is wrong" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="350" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-1" value="Class-Based Custom AsyncValidator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="510" y="90" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="XpXXUzZRImZaosSwKsz3-3" target="XpXXUzZRImZaosSwKsz3-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-3" value="Create a new class to implement your custom validator" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="120" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="XpXXUzZRImZaosSwKsz3-5" target="XpXXUzZRImZaosSwKsz3-7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-5" value="[Optional] have the class implement the &#39;Async Validator&#39; interface" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="190" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="XpXXUzZRImZaosSwKsz3-7" target="XpXXUzZRImZaosSwKsz3-8" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-7" value="Add a &#39;validate&#39; method to the class, which will be with a FormGroup or FormControl" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="270" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XpXXUzZRImZaosSwKsz3-8" value="Validator method should return an Observable that will emit &#39;null&#39; if everything is OK or an if something is wrong" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="350" width="320" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
