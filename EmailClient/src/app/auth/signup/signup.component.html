@@ -28,14 +28,17 @@
         ></app-input>
 
         <div *ngIf="$any(authForm).get('password').touched && $any(authForm).get('passwordConfirmation').touched && $any(authForm).errors" class="ui red basic label">
-            <p *ngIf="authForm.errors != null && authForm.errors['passwordsDontMacth']">
+            <p *ngIf="authForm.errors != null && authForm.errors['passwordsDontMatch']">
                 Password and password Confirmation not matched
             </p>
         </div>
 
-        <button class="ui submit button primary">
-            Submit
-        </button>
+        <div>
+            <button class="ui submit button primary">
+                Submit
+            </button>
+        </div>
+        
 
     </form>
 </div>
