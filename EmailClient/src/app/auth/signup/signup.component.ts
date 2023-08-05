@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatchPassword } from '../validators/match-password';
 import { UniqueUsername } from '../validators/unique-username';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -27,7 +28,8 @@ export class SignupComponent implements OnInit{
   constructor (
     private matchPassword: MatchPassword,
     private uniqueUsername: UniqueUsername,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -46,15 +48,19 @@ export class SignupComponent implements OnInit{
 
     /* Another sysntex to do (CS-A)  */
     this.authService.signUp(this.authForm.value).subscribe({
-      next(res){
-        /* Naviaget some other route */
+      next: res => {
+        this.router.navigateByUrl('/inbox');
       },
       complete() {
           /* not much usable */
       },
-      error(err) {
-          
-      },
+      error: err => {
+        if(!err.status){
+          this.authForm.setErrors({ noConnection: true});
+        }else {
+          this.authForm.setErrors({ unknownError: true});
+        }
+      }
     });
   }
 

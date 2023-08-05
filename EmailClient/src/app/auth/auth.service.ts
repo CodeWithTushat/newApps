@@ -13,6 +13,11 @@ interface SignedinResponse {
   username: string
 }
 
+interface SigninCredentails {
+  username ? : string | null | undefined,
+  password ? : string | null | undefined
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +27,7 @@ export class AuthService {
 
   baseUrl: string = 'https://api.angular-email.com/';
 
-  signedIn$ = new BehaviorSubject(false); /* $ is optinal no change occure just to analyze its a observable */
+  signedIn$:any = new BehaviorSubject(null); /* $ is optinal no change occure just to analyze its a observable */
 
   constructor(
     private http: HttpClient
@@ -60,6 +65,15 @@ export class AuthService {
     .pipe(
       tap(() => {
         this.signedIn$.next(false);
+      })
+    );
+  }
+
+  signin(credentials:SigninCredentails) {
+    return this.http.post(`${this.baseUrl}auth/signin`, credentials)
+    .pipe(
+      tap((val) => {
+        this.signedIn$.next(true);
       })
     );
   }
