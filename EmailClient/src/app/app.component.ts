@@ -20,5 +20,11 @@ export class AppComponent {
     }); */
 
     this.signedin$ = this.authService.signedIn$;
+
+    this.authService.checkAuth().subscribe(() => {});
+    /* setTimeout(() => {
+      this.authService.signout().subscribe(() => {});
+    }, 5000); */
+    
   }
 }

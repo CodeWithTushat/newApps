@@ -8,10 +8,17 @@ interface SignupCredentials {
   passwordConfirmation?: string | null | undefined;
 }
 
+interface SignedinResponse {
+  authenticated: boolean,
+  username: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  /* erty007 */
 
   baseUrl: string = 'https://api.angular-email.com/';
 
@@ -28,10 +35,31 @@ export class AuthService {
   }
 
   signUp(credentials:SignupCredentials){
-    return this.http.post<SignupCredentials>(`${this.baseUrl}auth/signup`,credentials)
+    return this.http.post<SignupCredentials>(`${this.baseUrl}auth/signup`,credentials, {
+      /* withCredentials: true */
+    })
     .pipe(
       tap(() => {
         this.signedIn$.next(true);
+      })
+    );
+  }
+
+  checkAuth() {
+    return this.http.get<SignedinResponse>(`${this.baseUrl}auth/signedin`, {
+      /* withCredentials:true */
+    }).pipe(
+      tap(({authenticated}) => {
+        this.signedIn$.next(authenticated);
+      })
+    )
+  }
+
+  signout() {
+    return this.http.post(`${this.baseUrl}auth/signout`, {})
+    .pipe(
+      tap(() => {
+        this.signedIn$.next(false);
       })
     );
   }
